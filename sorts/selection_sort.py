@@ -5,17 +5,13 @@ def selection_sort(my_list):
     """
     Perform selection sort on my_list
     """
-    for i in range(len(my_list)):
-        new_min = my_list[i]
-        for j in range(i + 1, len(my_list)):
-            if my_list[j] < new_min:
-                new_min = my_list[j]
-                swap = j
-
-        if new_min != my_list[i]:
-            tmp = my_list[i]
-            my_list[i] = new_min
-            my_list[swap] = tmp
+    for i, k in enumerate(my_list):
+        for j, l in enumerate(my_list[i+1:]):
+            if l < k:
+                k = l
+                swap = j + i + 1
+        if k != my_list[i]:
+            my_list[i], my_list[swap] = my_list[swap], my_list[i]
     return my_list
 
 my_list = random_list(50)

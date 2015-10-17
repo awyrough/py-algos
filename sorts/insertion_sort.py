@@ -6,11 +6,10 @@ def insertion_sort(my_list):
     Perform insertion sort on my_list
     """
     for i in range(len(my_list)):
-        for j in reversed(range(1, i + 1)):
-            if my_list[j] < my_list[j - 1]:
-                tmp = my_list[j]
-                my_list[j] = my_list[j - 1]
-                my_list[j - 1] = tmp
+        j = i
+        while j > 0 and my_list[j] < my_list[j - 1]:
+            my_list[j], my_list[j - 1] = my_list[j - 1], my_list[j]
+            j -= 1
     return my_list
 
 my_list = random_list(50)
