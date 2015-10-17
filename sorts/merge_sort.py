@@ -11,9 +11,6 @@ def merge_sort(my_list):
         for i in range(len(my_list)):
             left_value = left[l] if l < len(left) else None
             right_value = right[r] if r < len(right) else None
-            # print i
-            # print left_value
-            # print right_value
 
             if (not left_value == None and not right_value == None and left_value < right_value) or (not right_value and not right_value == 0):
                 try:
